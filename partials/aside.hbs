@@ -1,0 +1,21 @@
+<aside id="aside">
+    <section class="blog">
+        {{#if @blog.description}}<section class="blog--about">
+            <h3 class="title">About {{@blog.title}}</h3>
+            <p class="description">
+                {{@blog.description}}
+            </p>
+        </section>{{/if}}
+
+
+        {{!> social}}
+
+
+        {{!> newsletter }}
+
+    </section>
+
+    {{!> ads}}
+
+
+</aside>

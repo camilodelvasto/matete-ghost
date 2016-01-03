@@ -1,0 +1,51 @@
+{{!< default}}
+<article id="post">
+    {{#post}}
+    <section class="post{{#if featured}} featured{{/if}}" id="{{id}}">
+        <div class="post--container">
+            <h1 class="post--head">
+                <a href="{{url}}">{{{title}}}</a>
+            </h1>
+            <div class="post--body">
+                {{content}}
+            </div>
+            <div class="post--foot">
+                <div class="share">
+                    <h3 class="label">Share</h3>
+                    <div class="icons">
+                        <a class="icon" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a class="icon" href="https://plus.google.com/share?url={{url absolute="true"}}" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                        <a class="icon" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>{{#if tags}}<div class="tags">
+                    <h3 class="label">Tags</h3>
+                    {{tags separator=""}}
+                </div>{{/if}}
+                {{#author}}
+                <div class="author">
+                    <hr>
+                    <h2 class="author">{{^if image}}Article by {{else}}About Author {{/if}}<a class="anchor" href="{{url}}">{{name}}</a></h2>
+                    {{#if image}}<figure class="avatar">
+                        <img src="{{image}}" alt="{{name}}" />
+                    </figure>{{/if}}{{#if bio}}<p class="bio">
+                        {{bio}}
+                        {{#if website}}<a href="{{website}}">{{website}}</a>{{/if}}
+                    </p>{{/if}}
+                </div>
+                {{/author}}
+            </div>
+
+
+            {{!> disqus}}
+
+            
+        </div>
+    </section>
+    {{/post}}
+</article>{{> aside}}

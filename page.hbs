@@ -1,0 +1,20 @@
+{{!< default}}
+<article id="page">
+    {{#post}}
+    <section class="staticpage" id="{{id}}">
+        {{#if image}}
+		<figure class="post--cover">
+			<img src="{{image}}" alt="{{{title}}}">
+		</figure>
+    	{{/if}}
+        <div class="post--container">
+            <h1 class="post--head">
+                <a href="{{url}}">{{{title}}}</a>
+            </h1>
+            <div class="post--body">
+                {{content}}
+            </div>
+        </div>
+    </section>
+    {{/post}}
+</article>{{> aside}}

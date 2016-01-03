@@ -1,0 +1,22 @@
+<header id="header">
+    <div class="wrapper">
+        {{#if @blog.logo}}
+            <div class="logo">
+                <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+            </div>
+        {{else}}
+            {{#if @blog.title}}
+            <div class="title"><h1>
+                <a href="{{@blog.url}}">{{@blog.title}}</a>
+            </h1></div>
+            {{else}}
+            <div class="title"><h1>
+                <a href="{{@blog.url}}">Ellie</a>
+            </h1></div>
+            {{/if}}
+        {{/if}}
+
+        {{navigation}}
+        <span class="underline"></span>
+    </div>
+</header>

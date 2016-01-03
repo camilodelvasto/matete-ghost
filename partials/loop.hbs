@@ -1,0 +1,30 @@
+<article id="posts">
+    <div class="masorny">
+        {{#foreach posts}}<section class="post{{#if featured}} featured{{/if}}{{#if image}} cover{{/if}}" id="{{id}}">
+            {{#if image}}
+    		<figure class="post--cover">
+    			<img src="{{image}}" alt="{{{title}}}">
+    		</figure>
+        	{{/if}}
+            <div class="post--container">
+                <h1 class="post--head">
+                    <a href="{{url}}">{{{title}}}</a>
+                </h1>
+                <p class="post--body">
+                    {{#if image}} {{excerpt words="30"}}
+                    {{else}} {{excerpt words="70"}}
+                    {{/if}}
+                </p>
+                <div class="post--foot">
+                    <time class="date" datetime="{{date format='YYYY-MM-DD'}}">
+                        <i class="fa fa-clock-o"></i>
+                        {{date format="D MMM YYYY"}}
+                    </time> &bull;
+        			<a class="disqus" href="{{url}}#disqus_thread"></a>
+                    <a class="anchor" href="{{url}}">see more</a>
+                </div>
+            </div>
+        </section>{{/foreach}}
+    </div>
+    {{pagination}}
+</article>
