@@ -8,6 +8,7 @@ body{position:relative; margin-top:100px;}
 header#header{ z-index: 1000; top:0; left:0; width:100%; position: fixed; background:rgba(255,255,255,0.8);}
 .share{text-align:right;}
 .share .label{display:none;}
+article#post .post .post--foot .share{width:100%;}
 
 @media screen and (max-width: 800px){
   .share .label{
